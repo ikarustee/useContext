@@ -18,6 +18,7 @@ function App() {
       .then((data) => setUserGeoIpData(data));
   }, []);
 
+
   useEffect(() => {
     if (userGeoIpData) {
       fetch(
@@ -28,15 +29,13 @@ function App() {
           setUserMapData(data);
         });
       /* Second fetch to get flag */
-      fetch(
-        `https://api.ipfind.com/flag?=${userGeoIpData.ip}&auth=${process.env.REACT_APP_IPFIND_API_KEY}`
-      )
-        .then((res) => res.json())
-        .then((data) => {
-          setUserFlag(data);
-        });
+      // https://api.ipfind.com/flag?ip=${userGeoIpData.ip}&auth=${process.env.REACT_APP_IPFIND_API_KEY}
+
+      
     }
   }, [userGeoIpData]);
+
+  console.log(userFlag)
 
   return (
     <div className="App component">
@@ -47,9 +46,9 @@ function App() {
           <Userinfo
             IP={userGeoIpData.ip}
             location={userMapData.country}
+            city={userMapData.city}
             countryCode={userMapData.country_code}
             timeZone={userMapData.timezone}
-            flag={userFlag}
           />
 
           <Usermap
