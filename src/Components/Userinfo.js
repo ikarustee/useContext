@@ -16,7 +16,7 @@ function Userinfo({ IP, location, city, countryCode, timeZone }) {
           <li> Time Zone: {timeZone} </li>
           <li>Local time: {hours}:{minutes} | {DateTime.now().setLocale(countryCode.toLowerCase()).toFormat('MMMM dd, yyyy')}</li>
           <li className="flag">
-            National Flag: <img className="flag" src={`http://api.ipfind.com/flags/64/${countryCode.toLowerCase()}.png`} alt="Country flag" width="100"  />
+            National Flag: <img className="flag" src={`http://api.ipfind.com/flags/64/${countryCode.toLowerCase()}.png`} alt="Country flag" width="100" />
           </li>
     </>
   );
