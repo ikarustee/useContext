@@ -1,5 +1,4 @@
-{ "homepage": "https://ikarustee.github.io/usecontext/",
-  "name": "context-app",
+{ "name": "context-app",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
