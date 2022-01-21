@@ -39,10 +39,8 @@ function App() {
 
   return (
     <div className="App component">
-      <h1>GEOLOCATION</h1>
-      {/*    <h2>{userGeoIpData && userGeoIpData.ip}</h2> */}
       {userMapData && (
-        <div>
+        <div className="userinfo">
           <Userinfo
             IP={userGeoIpData.ip}
             location={userMapData.country}
@@ -50,13 +48,16 @@ function App() {
             countryCode={userMapData.country_code}
             timeZone={userMapData.timezone}
           />
-
+        </div>
+      )}
+      <div className="usermap">
+      {userMapData && (
           <Usermap
             latitude={userMapData.latitude}
             longitude={userMapData.longitude}
           />
-        </div>
       )}
+      </div>
     </div>
   );
 }
