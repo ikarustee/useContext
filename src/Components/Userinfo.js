@@ -4,9 +4,14 @@ import { DateTime } from "luxon";
 
 function Userinfo({ IP, location, city, countryCode, timeZone }) {
 
+  const addZero = (i) => {
+    if (i < 10) {i = "0" + i}
+    return i
+  }
   let time = new Date()
 	let hours = time.getHours() 
-	let minutes = time.getMinutes()
+	let minutes = addZero(time.getMinutes())
+
 
   return (
     <>    
