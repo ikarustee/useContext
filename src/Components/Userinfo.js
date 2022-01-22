@@ -9,16 +9,17 @@ function Userinfo({ IP, location, city, countryCode, timeZone }) {
 	let minutes = time.getMinutes()
 
   return (
-    <>
-          <li> IP: {IP} </li>
-          <li> Current Location: {city}, {location}</li>
-          <li> Country Code: {countryCode} </li>
-          <li> Time Zone: {timeZone} </li>
-          <li>Local time: {hours}:{minutes} | {DateTime.now().setLocale(countryCode.toLowerCase()).toFormat('MMMM dd, yyyy')}</li>
-          <li className="flag">
-            National Flag: <img className="flag" src={`http://api.ipfind.com/flags/64/${countryCode.toLowerCase()}.png`} alt="Country flag" width="100" />
-          </li>
-    </>
+    <>    
+          <h1>Geolocation</h1>
+          <p><strong>IP-Adress</strong></p>
+          <h2>{IP}</h2>
+          <p><strong>Location</strong></p>
+          <h3><img className="flag" src={`http://api.ipfind.com/flags/64/${countryCode.toLowerCase()}.png`} alt="Country flag" width="100" /> {city}, {location}</h3>
+          <p><strong>Timezone</strong></p>
+          <h3>{timeZone}</h3>
+          <p><strong>Date and time</strong></p>
+          <h3>{DateTime.now().setLocale(countryCode.toLowerCase()).toFormat('MMMM dd, yyyy')} | {hours}:{minutes}</h3>
+   </>
   );
 }
 
