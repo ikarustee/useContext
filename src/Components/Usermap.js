@@ -5,7 +5,7 @@ const Usermap = ({ longitude, latitude }) => {
   console.log(longitude, latitude);
 
   return (
-      <Map height={400} defaultCenter={[latitude, longitude]} defaultZoom={11}>
+      <Map height={400} defaultCenter={[latitude - 0.1, longitude - 0.1]} defaultZoom={11}>
         <Marker width={50} anchor={[latitude, longitude]} />
       </Map>
   );
